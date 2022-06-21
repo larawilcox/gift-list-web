@@ -1,23 +1,45 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Routes, Route } from "react-router-dom";
 import './App.css';
 
+import Header from './Components/Header';
+import Login from './Screens/Login';
+import SignUp from './Screens/SignUp';
+import MyLists from './Components/MyLists';
+import AddList from './Components/AddList';
+import ChosenList from './Components/ChosenList';
+import EditItem from './Components/EditItem';
+import AddItem from './Components/AddItem';
+import SubscribedLists from './Components/SubscribedLists';
+import Settings from './Components/Settings';
+import SubscribedToList from './Components/SubscribedToList';
+import ShoppingList from './Components/ShoppingList';
+
+
 function App() {
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="main-page">
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/my-lists" element={<MyLists />} />
+          <Route path="/my-lists/add-list" element={<AddList />} />
+          <Route path="/list/:listId" element={<ChosenList />} />
+          <Route path="/list/:listId/item/:itemId" element={<EditItem />} />
+          <Route path="/list/:listId/new-item" element={<AddItem />} />
+          <Route path="/subscribed-lists" element={<SubscribedLists />} />
+          <Route path="/subscribed-lists/:listId" element={<SubscribedToList />} />
+          <Route path="/shopping-list" element={<ShoppingList />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="*" element={<h1>This page does not exist</h1>} />
+        </Routes>
+      </div>
+
+
     </div>
   );
 }
