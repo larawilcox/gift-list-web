@@ -434,7 +434,6 @@ p {
 
 .save-link-button {
   margin: auto;
-  padding-bottom: 10px;
 }
 
 .error-text {
@@ -455,9 +454,14 @@ p {
   height: 650px;
   border: 2px solid var(--textGrey);
   margin: 50px auto;
-  padding: 40px 10px;
+  padding: 0px 10px 40px 10px;
   border-radius: 2px;
   background-color: var(--background);
+  color: var(--textDark)
+}
+
+.login-wrapper h1 {
+  margin-bottom: 10px;
 }
 
 .login-text {
@@ -749,6 +753,29 @@ p {
 
 .settings-buttons {
   padding-bottom: 50px;
+}
+
+.forgot-password-button {
+  margin-top: -20px
+}
+
+.forgot-password {
+  color: var(--textDark);
+}
+
+.forgot-password:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.email-sent-text {
+  font-size: var(--medium);
+  color: var(--textDark);
+  padding-bottom: 30px;
+}
+
+.new-password-title {
+  color: var(--textDark);
 }
 
 @media (max-width: 900px) {

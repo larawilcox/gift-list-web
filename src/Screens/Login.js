@@ -73,6 +73,7 @@ const Login = () => {
     return (
         <div className="login-container">
             <div className="login-wrapper">
+                <h1>Login</h1>
                 {errorMessage.length > 0 ? <p className="error-text">{errorMessage}</p> : null}
                 <label htmlFor="username" className="edit-item-title">Username</label>
                 <input 
@@ -96,6 +97,9 @@ const Login = () => {
                     className="login-input"
                     onChange={e => setPassword(e.target.value)}
                 ></input>
+                <div className="forgot-password-button" onClick={() => navigate('reset-password', {state: {username: username}})}>
+                    <p className="forgot-password">Forgot Password?</p>
+                </div>
                 <div className="save-link-button">
                     <Button buttonFunction={onSubmitEditing} buttonText="Login" />
                 </div>

@@ -5,6 +5,8 @@ import './App.css';
 import Header from './Components/Header';
 import Login from './Screens/Login';
 import SignUp from './Screens/SignUp';
+import ResetPassword from './Screens/ResetPassword';
+import NewPassword from './Screens/NewPassword';
 import MyLists from './Components/MyLists';
 import AddList from './Components/AddList';
 import ChosenList from './Components/ChosenList';
@@ -26,6 +28,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/change-password" element={<NewPassword />} />
           <Route path="/my-lists" element={<MyLists />} />
           <Route path="/my-lists/add-list" element={<AddList />} />
           <Route path="/list/:listId" element={<ChosenList />} />

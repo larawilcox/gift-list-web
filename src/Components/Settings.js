@@ -97,7 +97,7 @@ const Settings = () => {
             })
 
             storeToken('', '');
-            navigate(`/`);
+            navigate(`/sign-up`);
         } catch (e) {
             console.log(e);
         }
@@ -158,7 +158,7 @@ const Settings = () => {
                     <Button buttonText={"Logout"} buttonFunction={logout} />
                 </div>
                 <div className="settings-buttons">
-                    <Button buttonText={"Delete My Account"} />
+                    <Button buttonText={"Delete My Account"} buttonFunction={deleteAccount} />
                 </div>
             </div>
         </div>

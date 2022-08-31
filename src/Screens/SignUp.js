@@ -75,6 +75,7 @@ const SignUp = () => {
     return (
         <div className="login-container">
             <div className="login-wrapper">
+                <h1>Sign up</h1>
                 {errorMessage.length > 0 ? <p className="error-text">{errorMessage}</p> : null}
                 <label htmlFor="forename" className="edit-item-title">Forename</label>
                 <input 
