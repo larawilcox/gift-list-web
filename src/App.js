@@ -16,6 +16,7 @@ import SubscribedLists from './Components/SubscribedLists';
 import Settings from './Components/Settings';
 import SubscribedToList from './Components/SubscribedToList';
 import ShoppingList from './Components/ShoppingList';
+import { PrivacyPolicy } from './Screens/Privacy';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/subscribed-lists/:listId" element={<SubscribedToList />} />
           <Route path="/shopping-list" element={<ShoppingList />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<h1>This page does not exist</h1>} />
         </Routes>
       </div>
