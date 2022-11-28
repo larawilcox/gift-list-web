@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 import '../App.css';
@@ -16,18 +17,21 @@ const NewPassword = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    let [searchParams, setSearchParams] = useSearchParams();
-        
+    let [searchParams] = useSearchParams();
+
+    let navigate = useNavigate();
 
     const changePassword = async () => {
         
         const resetcode = searchParams.get('resetcode')
         
         try {
-            const changePassword = await axios.patch(`${BASE_URL}/changepassword`, {
+            await axios.patch(`${BASE_URL}/changepassword`, {
                 password,
                 resetcode
             })
+            setErrorMessage('Password successfully changed')
+            setTimeout(() => navigate(`/`), 2000)
         } catch (e) {
             console.log(e)
             console.log('error message: ', e.response.data.error)
